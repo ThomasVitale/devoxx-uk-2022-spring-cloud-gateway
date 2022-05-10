@@ -1,0 +1,27 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: book-service
+spec:
+  template:
+    spec:
+      containers:
+        - image: ghcr.io/thomasvitale/devoxxuk/book-service:initial
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9001
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+            periodSeconds: 10
+          resources:
+            requests:
+              memory: 512Mi
+              cpu: "0.1"
+            limits:
+              memory: 512Mi
+              cpu: "2"
