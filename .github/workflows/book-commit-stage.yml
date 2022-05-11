@@ -42,7 +42,6 @@ jobs:
           ./gradlew build
   package:
     name: Package and Publish
-    if: ${{ github.ref == 'refs/heads/main' }}
     needs: [ build ]
     runs-on: ubuntu-20.04
     permissions:
