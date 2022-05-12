@@ -29,11 +29,6 @@ public class EdgeServiceApplication {
                 .build();
     }
 
-    @Bean
-    KeyResolver keyResolver() {
-        return exchange -> Mono.just("ANONYMOUS");
-    }
-
 }
 
 @RestController
