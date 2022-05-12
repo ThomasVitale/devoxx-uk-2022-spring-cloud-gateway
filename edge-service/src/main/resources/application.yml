@@ -1,6 +1,10 @@
 server:
   port: 9000
 
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+
 management:
   endpoints:
     web:
@@ -10,7 +14,3 @@ management:
 spring:
   application:
     name: edge-service
-
-logging:
-  pattern:
-    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

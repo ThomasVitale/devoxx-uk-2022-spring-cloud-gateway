@@ -4,6 +4,9 @@ metadata:
   name: book-service
 spec:
   template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/min-scale: "1"
     spec:
       containers:
         - image: ghcr.io/thomasvitale/devoxxuk/book-service:initial

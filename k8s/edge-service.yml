@@ -4,12 +4,15 @@ metadata:
   name: edge-service
 spec:
   template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/min-scale: "1"
     spec:
       containers:
         - image: ghcr.io/thomasvitale/devoxxuk/edge-service:initial
           imagePullPolicy: Always
           ports:
-            - containerPort: 9001
+            - containerPort: 9000
           env:
             - name: JAVA_TOOL_OPTIONS
               value: -javaagent:/workspace/BOOT-INF/lib/opentelemetry-javaagent-1.12.1.jar
