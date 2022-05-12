@@ -9,7 +9,7 @@ spec:
         autoscaling.knative.dev/min-scale: "1"
     spec:
       containers:
-        - image: ghcr.io/thomasvitale/devoxxuk/edge-service:circuit-breaker
+        - image: ghcr.io/thomasvitale/devoxxuk/edge-service:security
           imagePullPolicy: Always
           ports:
             - containerPort: 9000
