@@ -9,7 +9,7 @@ spec:
         autoscaling.knative.dev/min-scale: "1"
     spec:
       containers:
-        - image: ghcr.io/thomasvitale/devoxxuk/book-service:initial
+        - image: ghcr.io/thomasvitale/devoxxuk/book-service:routes
           imagePullPolicy: Always
           ports:
             - containerPort: 9001
