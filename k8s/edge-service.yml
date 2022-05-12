@@ -9,7 +9,7 @@ spec:
         autoscaling.knative.dev/min-scale: "1"
     spec:
       containers:
-        - image: ghcr.io/thomasvitale/devoxxuk/edge-service:retries
+        - image: ghcr.io/thomasvitale/devoxxuk/edge-service:rate-limiter
           imagePullPolicy: Always
           ports:
             - containerPort: 9000
@@ -22,6 +22,8 @@ spec:
               value: book-service
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: http://tempo.observability-stack.svc.cluster.local:4317
+            - name: SPRING_REDIS_HOST
+              value: game-redis.redis.svc.cluster.local
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
