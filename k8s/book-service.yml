@@ -14,7 +14,7 @@ spec:
         prometheus.io/port: "9001"
     spec:
       containers:
-        - image: ghcr.io/thomasvitale/devoxxuk/book-service:security
+        - image: ghcr.io/thomasvitale/devoxxuk/book-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 9001

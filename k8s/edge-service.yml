@@ -12,7 +12,7 @@ spec:
         prometheus.io/port: "9000"
     spec:
       containers:
-        - image: ghcr.io/thomasvitale/devoxxuk/edge-service:security
+        - image: ghcr.io/thomasvitale/devoxxuk/edge-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 9000
