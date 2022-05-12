@@ -15,7 +15,7 @@ spec:
             - containerPort: 9000
           env:
             - name: BOOK_SERVICE_URL
-              value: http://book-service
+              value: http://book-service.default.svc.cluster.local
             - name: JAVA_TOOL_OPTIONS
               value: -javaagent:/workspace/BOOT-INF/lib/opentelemetry-javaagent-1.12.1.jar
             - name: OTEL_SERVICE_NAME

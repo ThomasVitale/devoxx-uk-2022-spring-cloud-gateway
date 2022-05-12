@@ -2,6 +2,8 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: book-service
+  labels:
+    networking.knative.dev/visibility: cluster-local
 spec:
   template:
     metadata:
