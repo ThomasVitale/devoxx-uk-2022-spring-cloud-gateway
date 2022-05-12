@@ -9,6 +9,9 @@ spec:
     metadata:
       annotations:
         autoscaling.knative.dev/min-scale: "1"
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "9001"
     spec:
       containers:
         - image: ghcr.io/thomasvitale/devoxxuk/book-service:rate-limiter
