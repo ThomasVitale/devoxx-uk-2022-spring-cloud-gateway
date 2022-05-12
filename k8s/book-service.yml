@@ -11,7 +11,7 @@ spec:
         autoscaling.knative.dev/min-scale: "1"
     spec:
       containers:
-        - image: ghcr.io/thomasvitale/devoxxuk/book-service:rate-limiter
+        - image: ghcr.io/thomasvitale/devoxxuk/book-service:circuit-breaker
           imagePullPolicy: Always
           ports:
             - containerPort: 9001
