@@ -6,9 +6,9 @@ scrape_configs:
     scrape_interval: 5s
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: [ 'edge-service:9000' ]
+      - targets: [ 'host.docker.internal:9000' ]
   - job_name: 'book-service'
     scrape_interval: 5s
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: [ 'book-service:9001' ]
+      - targets: [ 'host.docker.internal:9001' ]
